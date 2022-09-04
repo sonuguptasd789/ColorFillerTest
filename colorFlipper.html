@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Color Flipper</title>
+	<style type="text/css">
+		
+		*{
+			margin: 0;
+		}
+		body{
+			display: flex;
+    background-color: #f3f5f7;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+		}
+		.header{
+           display: flex;
+           height: 80px;
+           position: absolute;
+           top: 0;
+           left: 0;
+           background-color: #fff;
+           box-shadow: 1px 2px 3px #f5f5f5;
+           width: 100%;
+           justify-content: space-around;
+           align-items: center;
+		}
+		.colorBox{
+			background-color: #000;
+		}
+		.content{
+			max-width: 560px;
+			margin: 0 auto;
+			color: #fff;
+			padding: 25px;
+			text-align: center;
+		}
+		.colorBox{
+			padding: 25px;
+			border-radius: 8px;
+		}
+		.color{
+			color: red;
+		}
+		button{
+			background-color: whitesmoke;
+			border: 1px solid #000;
+			padding: 10px 25px;
+			margin-top: 15px;
+			border-radius: 8px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="header">
+		<div><a href="/">Color Flipper</a></div>
+        <div><a href="hexColor.html">Simple hex color</a></div>
+ 	</div>
+
+	<div class="content">
+		 <div class="colorBox">
+		 	<h2>Background Color : <span class="color">#f3f5f7</span></h2>
+		 </div>
+		 <button id="btn">Click me</button>
+	</div>  
+     
+
+
+     <script type="text/javascript">
+     	
+     	const colors = ["Green", "Red", "Yellow", "rgb(133, 122, 200)", "#f15025"];
+
+     	const btn = document.getElementById('btn');
+         
+         const color = document.querySelector(".color");
+         
+         
+
+         btn.addEventListener("click", function () {
+         	const randomNumber = getRandomNumber();
+
+         	document.body.style.backgroundColor = colors[randomNumber];
+         	color.textContent = colors[randomNumber]
+         })
+
+         function getRandomNumber() {
+         	
+         	return Math.floor(Math.random()*colors.length);
+         }
+
+    //   const hex = [0,1,2,3,4,5,6,7,8,9,"A", "B", "c", "D", "E", "F"];
+
+    //   const btn = document.getElementById('btn');
+    //   const color = document.querySelector(".color");
+
+    //   btn.addEventListener("click", function () {
+
+
+      	
+    //      let hexColor = "#";
+    //      for (var i = 0; i<6; i++){
+
+    //      	hexColor += hex[getRandomNumber()]
+    //      }
+    //      color.textContent = hexColor;
+    //      document.body.style.backgroundColor = hexColor;
+
+    //   })
+    
+    // function getRandomNumber() {
+    // 	return Math.floor(Math.random()*hex.length);
+    // }
+
+
+
+     </script>
+</body>
+</html>
